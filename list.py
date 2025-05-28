@@ -1,7 +1,8 @@
-productos = ["cuaderno", "colores", "maleta", "cartuchera"]
+productos = []
 carrito = []
 
 menu = f"""
+
 +----------------------+
    Utiles Escolares
 +----------------------+
@@ -28,14 +29,9 @@ def imprimirLista(lista):
 
     
 def agregarUtiles():
-    imprimirTitulo("Añadir Utiles")
-    imprimirLista(productos)
+    imprimirTitulo("Añadir Utiles   ")
     _input = str(input("Ingrese el nombre del producto: "))
-    for i in range(len(productos)):
-        if productos[i] == _input:
-            carrito.append(_input)
-            input("Continuar...")
-            break
+    carrito.append(_input)
 
 def listarUtiles():
     imprimirTitulo("Lista de Utiles")
@@ -48,16 +44,12 @@ def actualizarItem():
     print("Ingrese el codigo del Item: ")
     _input = int(input()) - 1
     if _input >= 0 and _input <= len(carrito):
-        imprimirLista(productos)
         idd = _input
             
         _input = str(input("Ingrese el nombre del producto: "))
-    for i in range(len(productos)):
-        if productos[i] == _input:
-            carrito.pop(idd)
-            carrito.insert(idd, _input)
-            input("Continuar...")
-            break
+        carrito.pop(idd)
+        carrito.insert(idd, _input)
+        input("Continuar...")
 
 def eliminarItem():
     imprimirTitulo("Eliminar Item")
@@ -71,7 +63,6 @@ def eliminarItem():
     input("Continuar...")
 
 while True:
-    
     
     print(menu)
     opcion = input("Ingrese una opcion: ")
@@ -87,5 +78,3 @@ while True:
 
     elif opcion == "4":
         eliminarItem()
-
-    
