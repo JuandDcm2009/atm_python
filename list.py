@@ -35,7 +35,10 @@ def agregarUtiles():
 
 def listarUtiles():
     imprimirTitulo("Lista de Utiles")
-    imprimirLista(carrito)
+    if len(carrito) > 0:
+        imprimirLista(carrito)
+    else:
+        print("     Aun no hay nada.. \n")
     input("Continuar...")
 
 def actualizarItem():
@@ -45,7 +48,6 @@ def actualizarItem():
     _input = int(input()) - 1
     if _input >= 0 and _input <= len(carrito):
         idd = _input
-            
         _input = str(input("Ingrese el nombre del producto: "))
         carrito.pop(idd)
         carrito.insert(idd, _input)
