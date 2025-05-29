@@ -4,8 +4,6 @@
 
 lista = [3, 9, 4, 7, 7969, 86, 800, 7789, 89786, 7876, 76, 67, 456,23,456,0.9999, 795, 975, 9876, 1324, 23, 65]
 
-
-
 def ordenar():
     for li in range(len(lista) - 1):
         for lis in range(li + 1, len(lista)):

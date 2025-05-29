@@ -1,5 +1,7 @@
 score = (["bajo", 0, 25], ["aceptable", 26, 50], ["sobreSaliente", 51, 75], ["exelente", 76, 90])
 
+
+
 def cal(nota):
     for i, n in enumerate(score, start=1):
         if (nota >= n[1] and nota <= n[2]):
